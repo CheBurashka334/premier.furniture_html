@@ -1,3 +1,6 @@
+.project-box {
+	padding-top: 1px;
+}
 .projects-list {
 	margin-top: 20px;
 	margin-bottom: 30px;
@@ -52,10 +55,12 @@
 	&.active {
 		.project-price {
 			opacity: 1;
+			transition: opacity .3s ease;
 		}
 		.overlay {
 			opacity: 0;
 			z-index: 0;
+			transition: opacity .3s ease;
 		}
 	}
 }
@@ -67,8 +72,10 @@
 	text-align: center;
 	will-change: transform;
 	transition: transform .3s ease;
+	transform: translateY(0%);
 	.project-item.active & {
 		transform: translateY(-150%);
+		transition: transform .3s ease;
 	}
 	@media #{$medium-and-up}{
 		padding: 40px 40px 100px;

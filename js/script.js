@@ -11,57 +11,49 @@ $(document).ready(function(){
 	});
 	
 	
-	// menu
+	// mobile-menu
 	$('.btn-menu').click(function(){
-		$('.page-aside-dark-bg, .page-aside').addClass('open');
+		$('.page-aside-dark-bg').fadeIn(500);
+		$('.page-aside').addClass('open');
 	});
 	$('.btn-close-menu,.page-aside-dark-bg').click(function(){
-		$('.page-aside-dark-bg, .page-aside').removeClass('open');
+		$('.page-aside-dark-bg').fadeOut(500);
+		$('.page-aside').removeClass('open');
 	});	
-	
-	// search
-	$('.search-btn').click(function(){
-		$(this).toggleClass('active').siblings('.search-field-box').toggleClass('active');
+	// anchor-link-menu
+	$('.js-anchor-link').click(function(e){
+		var el = $(this).attr('href');
+		var scrollto = $(el).offset();
+		if($(this).parents().hasClass('page-aside')){
+			$('.page-aside-dark-bg, .page-aside').removeClass('open');
+		}
+		$('html,body').animate({scrollTop: scrollto.top - $('.header').outerHeight() + 1},700);
 	});
+	
 	
 	// modal
 	$('.btn-modal').click(function(){
 		var modal = $(this).attr('data-modal');
-		$('#'+modal).css('top', $(window).scrollTop() + 150);
-		$('.modal-dark-bg, #'+modal).addClass('open');
+		$('.modal-dark-bg, #'+modal).fadeIn(500).addClass('open');
+		if($('#'+modal).hasClass('fixed-form')){
+			position('fix');
+		}
+		if($('#'+modal).hasClass('scrollto-form')){
+			$('html,body').animate({scrollTop: $('#'+modal).offset().top/* - $('.header').outerHeight() + 1*/},700);
+		}
 	});
 	$('.btn-close-modal, .modal-dark-bg').click(function(e){
 		e.preventDefault();
-		$('.modal-dark-bg, .modal').removeClass('open');
-	});
-	
-	
-	// placeholder
-	// init
-	$('.inputtext, input:not([type="submit"]),textarea').each(function(){
-		if($(this).val().length > 0){
-			$(this).addClass('dirty');
-		} else {
-			$(this).removeClass('dirty');
+		var modal = $(this).parents('.modal');
+		if(modal.hasClass('fixed-form')){
+			position();
 		}
-	});
-	// action
-	$('.inputtext, input:not([type="submit"]),textarea').keyup(function(){
-		$(this).change();
-	});
-	$('.inputtext, input:not([type="submit"]),textarea').change(function(){
-		if($(this).val().length > 0){
-			$(this).addClass('dirty');
-		} else {
-			$(this).removeClass('dirty');
-		}
+		$('.modal-dark-bg, .modal').fadeOut(500).removeClass('open');
 	});
 	
-	// collapsible 
-	$('.collapsible').collapsible();
 	
-	if($(window).outerWidth() < 992){
-		$('select.mobile-synh').change(function(){
+	if($('html').hasClass('bx-touch')){
+		$('select.touch-synh').change(function(){
 			var radio = $('.select-synh[data-select="'+$(this).attr('id')+'"]');
 			radio.find('input[type="radio"]').not('[value="'+$(this).val()+'"]').prop('checked', false);
 			radio.find('input[type="radio"][value="'+$(this).val()+'"]').prop('checked', true);
@@ -70,7 +62,7 @@ $(document).ready(function(){
 	}
 	$('.select-synh input[type="radio"]').change(function(){
 		var select = $(this).parents('.select-synh').attr('data-select');
-		if(($(window).outerWidth() > 992) || (!$('#'+select).hasClass('mobile-synh'))){
+		if(($(window).outerWidth() > 992) || (!$('#'+select).hasClass('touch-synh'))){
 			$('#'+select).val($(this).val());
 			$('#'+select).change();
 		}
@@ -94,27 +86,27 @@ $(document).ready(function(){
 		var value = $(this).find('[data-value-text]');
 		var box = $(this).parents('.dropdown-box');
 		$(this).attr('data-active', 'active').siblings().removeAttr('data-active');
-		box.find('.dropdown-value > .item-text').html(value.attr('data-value-text'));
+		box.addClass('selected').find('.dropdown-value > .item-text').html(value.attr('data-value-text'));
 		e.stopPropagation();
 		box.removeClass('open');
 	});
 	
 	// jcarousel
 	// http://sorgalla.com/jcarousel/docs/
-	$('.carousel').jcarousel({
-		list: '.carousel-inner'
-	});
-	$('.carousel-nav')
-		.jcarouselPagination({
-			item: function(page){
-				return '<li class="nav-item"><a class="nav-link" href="#'+page+'"></a></li>';
-			}
+	$('.carousel')
+		.on('jcarousel:createend jcarousel:reloadend', function(e, carousel){
+			$(this).find('.indicator .total').text(carousel.items().length);
 		})
-		.on('jcarouselpagination:active', 'li', function(){ // - вот эта херня не работает почему-то
-			$(this).children('a').addClass('active');
+		.on('jcarousel:targetin', '.carousel-item', function(e, carousel){
+			$(this).parents('.carousel').find('.indicator .current').text($(this).index() + 1);
 		})
-		.on('jcarouselpagination:inactive', 'li', function(){ // - и эта (а должна!)
-			$(this).children('a').removeClass('active');
+		.jcarousel({
+			list: '.carousel-inner',
+			transitions: Modernizr.csstransforms ? {
+				transforms: Modernizr.csstransforms,
+				transforms3d: Modernizr.csstransforms3d,
+				easing: 'ease'
+			} : false
 		});
 	$('.carousel-controlls .prev')
 		.on('jcarouselcontrol:active', function(){
@@ -133,134 +125,43 @@ $(document).ready(function(){
 		})
 		.jcarouselControl({target: '+=1'});
 	
-	
-	
-	// anchor-link
-	$('.anchor-link').click(function(e){
-		var el = $(this).attr('href');
-		var scrollto = $(el).offset();
-		$('html,body').animate({scrollTop: scrollto.top - 100},700);
-		return false;
-		//e.preventDefault;
+	// project
+	$('.js-project').click(function(){
+		// где-то тут должна быть загрузка фотографий проекта,
+		// добавление их <div class="carousel-item col s12 m12 l12"><img/></div>
+		// в .carousel-inner
+		// презагрузка карусели  $(this).parents('.carousel').jcarousel('reload');
+		$(this).parents('.project-item').siblings('.project-item').removeClass('active');
+		$(this).parents('.project-item').addClass('active');
+	});
+	$('.project-item').click(function(e){
+		e.stopPropagation();
+	});
+	$('.layout').click(function(){
+		$('.project-item').removeClass('active');
 	});
 	
-	// yandex.map
-	// https://tech.yandex.ru/maps/doc/jsapi/2.1/quick-start/tasks/quick-start-docpage/
-	/*ymaps.ready(init);
-	var sMap, sPlacemark, aMap;
 	
-	function init(){
-		sMap = new ymaps.Map("cont-map",{
-			center: [57.16565145867384,65.54499550000001], // Тюмень
-			zoom: 12,
-			controls: ['smallMapDefaultSet','routeEditor','trafficControl']
-		});
-		sPlacemark = new ymaps.Placemark(sMap.getCenter(),{},{
-			iconLayout: 'default#image',
-			iconImageHref: 'images/svg/pin56.svg',
-			iconImageSize: [35,53],
-		});
-		sMap.behaviors.disable('scrollZoom');
-		sMap.geoObjects.add(sPlacemark);
-		
-		aMap = new ymaps.Map("about-map",{
-			center: [57.16565145867384,65.54499550000001], // Тюмень
-			zoom: 11,
-			controls: ['smallMapDefaultSet','routeEditor','trafficControl']
-		});
-		var aMapCoords = [
-			[57.15689047935417,65.45087498346709],	// Черепанова 29
-			[57.15370227137238,65.56400849999996],	// 50 лет Октября, 8/1
-			[57.194878271190895,65.5943265],		// Ветеранов Труда, 47
-			[57.13485277148095,65.60593249999998],	// Пермякова, 1а
-			[57.13079877143909,65.54357149999998],	// Молодежная, 72
-			[57.13420827141365,65.4935445],			// Московский тракт, 120/1
-		]
-		var projectsCollection = new ymaps.GeoObjectCollection({},{
-			iconLayout: 'default#image',
-			iconImageHref: 'images/svg/pin56.svg',
-			iconImageSize: [35,53],
-		});
-		for (var i=0;i<aMapCoords.length;i++){
-			projectsCollection.add(new ymaps.Placemark(aMapCoords[i]));
-		}
-		aMap.behaviors.disable('scrollZoom');
-		aMap.geoObjects.add(projectsCollection);
-	}*/
-	
-	$('.toggle-content-box').each(function(){
-		if($(this).attr('data-state')){
-			var state = $(this).attr('data-state');
-		} else {
-			var state = 'less';
-		}
-		if($(this).attr('data-show')){
-			var num = $(this).attr('data-show');
-		} else {
-			var num = 5;
-		}
-		toggleContent($(this), 'init', state, num);
-	});
-	$('.show-buttons .show-more').click(function(){
-		toggleContent($(this).parents('.toggle-content-box'), 'toggle', 'more', $(this).parents('.toggle-content-box').attr('data-show'));
-		$(this).hide().siblings().show();
-	});
-	$('.show-buttons .show-less').click(function(){
-		toggleContent($(this).parents('.toggle-content-box'), 'toggle', 'less', $(this).parents('.toggle-content-box').attr('data-show'));
-		$(this).hide().siblings().show();
-	});
-	
-	// tabs
-	//$('.tabs').tabs();
+	// placeholder
 	// init
-	$('.tabs').each(function(){
-		var actID = $(this).find('.tab-header-item.active .tab-link').attr('href');
-		$(this).children('.tab-content').find(actID).addClass('open');
-		if($('.workarea .tab-hide-box').length > 0){
-			$('.tab-hide-box[data-hide-id='+actID+']').hide();
+	$('.inputtext, input:not([type="submit"]),textarea').each(function(){
+		if($(this).val().length > 0){
+			$(this).addClass('dirty');
+		} else {
+			$(this).removeClass('dirty');
 		}
 	});
 	// action
-	$('.tab-link').click(function(){
-		var actID = $(this).attr('href');
-		var tabs = $(actID).parents('.tabs');
-		if($(this).parent().hasClass('tab-header-item')){
-			$(this).parent('.tab-header-item').addClass('active').siblings().removeClass('active');
-		} else {
-			$('.tab-header-item [href='+actID+']').parent('.tab-header-item').addClass('active').siblings().removeClass('active');
-		}
-		tabs.children('.tab-content').find(actID).addClass('open').siblings().removeClass('open');
-		if($('.workarea .tab-hide-box').length > 0){
-			$('.tab-hide-box[data-hide-id!='+actID+']').show();
-			$('.tab-hide-box[data-hide-id='+actID+']').hide();
-		}
-		$(actID).trigger("tabshow");
-		return false;
+	$('.inputtext, input:not([type="submit"]),textarea').keyup(function(){
+		$(this).change();
 	});
-	
-	
-	// show/hide block
-	$('.btn-toggle-block').click(function(){
-		if($(this).attr('data-toggle-class')){
-			var $class = $(this).attr('data-toggle-class');
+	$('.inputtext, input:not([type="submit"]),textarea').change(function(){
+		if($(this).val().length > 0){
+			$(this).addClass('dirty');
 		} else {
-			var $class = 'hide';
-		}
-		if($(this).attr('data-hide-block')){
-			$($(this).attr('data-hide-block')).addClass($class);
-		}
-		if ($(this).attr('data-show-block')) {
-			$($(this).attr('data-show-block')).removeClass($class);
-		} 
-		if ($(this).attr('data-block')){
-			$($(this).attr('data-block')).toggleClass($class);
-		}
-		if($(this).is('a')){
-			return false;
+			$(this).removeClass('dirty');
 		}
 	});
-	
-	
 	// forms
 	$('[required]').change(function(){
 		validateRequired($(this));
@@ -308,14 +209,13 @@ $(document).ready(function(){
 });
 
 function position(fix) {
-	var pos = $(window).scrollTop();
 	if(fix == 'fix'){
+		var pos = $(window).scrollTop();
 		$('.page').css({'position': 'fixed', 'top': - pos+'px'});
 	} else {
-		console.log(pos);
-		$(window).scrollTop(pos);
-		//console.log($(window).scrollTop());
+		var pos = parseInt($('.page').css('top'), 10);
 		$('.page').css({'position': 'relative', 'top': 0});
+		$(window).scrollTop(-pos);
 	}
 }
 function toggleContent(el,action,state,num){

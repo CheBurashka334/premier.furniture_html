@@ -4,7 +4,7 @@
 		<div class="start-box-title">Кухни на заказ в Тюмени</div>
 	</div>
 </div>
-<div class="company-box">
+<div class="company-box" id="company">
 	<div class="box-title">Мы не просто изготавливаем кухни, </br>мы стараемся сделать вашу жизнь проще</div>
 	<div class="company-box-item">
 		<div class="container">
@@ -68,7 +68,7 @@
 		</div>
 	</div>
 </div>
-<div class="project-box">
+<div class="project-box" id="projects">
 	<div class="container">
 		<div class="row">
 			<div class="box-title">Последние выполненые проекты</div>
@@ -183,11 +183,11 @@
 			<div class="box-text col s12 m8 l6 center">
 				Обратитесь за помощью к нашим специалистам. Это&nbsp;бесплатно, познавательно и ни к чему не обязывает!
 			</div>
-			<button class="btn center">Получить консультацию</button>
+			<button class="btn center btn-modal" data-modal="consult-form">Получить консультацию</button>
 		</div>
 	</div>
 </div>
-<div class="reviews-box">
+<div class="reviews-box" id="reviews">
 	<div class="container">
 		<div class="box-title">Отзывы наших клиентов</div>
 		<div class="row">
@@ -210,11 +210,11 @@
 	<div class="container center-align">
 		<div class="row">
 			<div class="box-title">Актуальные тренды в </br>дизайне кухни в 2016</div>
-			<button class="btn center">Читать</button>
+			<button class="btn center btn-modal" data-modal="trends">Читать</button>
 		</div>
 	</div>
 </div>
-<div class="contacts-box">
+<div class="contacts-box" id="contacts">
 	<div class="container">
 		<div class="box-title">Премьер мебель</div>
 		<div class="contacts center-align">

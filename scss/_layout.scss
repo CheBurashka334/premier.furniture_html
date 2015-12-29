@@ -157,18 +157,5 @@ html, body {
 			order: 2;
 			margin-bottom: 0;
 		}
-		.soc-link {
-			display: inline-block;
-			width: 42px;
-			height: 42px;
-			margin: 0 5px;
-			vertical-align: middle;
-			.icon {
-				fill: #fff;
-			}
-			&:hover .icon {
-				fill: color('blue', 'dark');
-			}
-		}
 	}
 }

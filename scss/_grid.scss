@@ -3,10 +3,10 @@
 	min-width: 300px;
 	width: 93.75%;
 	@media #{$small-only}{
-		max-width: 300/320/100vw;
+		max-width: 300/320*100vw;
 	}
 	@media #{$medium-and-up}{
-		max-width: 710/768/100vw;
+		max-width: 710/768*100vw;
 	}
 	@media #{$large-and-up}{
 		max-width: 940px;

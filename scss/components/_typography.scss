@@ -160,6 +160,9 @@ h1, .box-title {
 	margin: 1.5em 0;
 	text-transform: uppercase;
 	color: color('blue', 'base');
+	form & {
+		margin-bottom: 15px;
+	}
 	@media #{$medium-and-up}{
 		font-size: $large-text;
 		line-height: $xlarge-text;
@@ -178,6 +181,12 @@ h2 {
 	color: color('blue', 'base-alt');
 	@media #{$medium-and-up}{
 		font-size: $xbig-text; 
+	}
+	.modal & {
+		color: $base-text-color;
+		line-height: 28px;
+		text-align: left;
+		font-weight: normal;
 	}
 }
 h3 {

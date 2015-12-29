@@ -9,6 +9,7 @@
 	<!--link rel="shortcut icon" href="favicon.ico" type="image/x-icon"-->
 	<!--link rel="shortcut icon" href="favicon.png" type="image/png"-->
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+	<script src="js/modernizr-custom.min.js"></script>
 	<script src="js/jquery-1.11.3.min.js"></script>
 	<script src="js/materialize.min.js"></script>
 	<script src="js/jquery.jcarousel.min.js"></script>
@@ -19,7 +20,8 @@
 <body>
 <div id="svg-placeholder" class="hide"></div>
 <div class="layout">
-<div class="page-aside">
+<div class="dark-bg page-aside-dark-bg hide-on-large-only"></div>
+<div class="page-aside hide-on-large-only">
 	<button class="btn btn-icon btn-close-menu"><svg class="icon"><use xlink:href="#close"/></svg></button>
 	<div class="page-aside-inner">
 		<div class="logo-box">
@@ -55,7 +57,7 @@
 				</div>
 				<div class="cont-box col s10 m4 l3">
 					<a class="phone-link" href="telto:+73452605129">+7&nbsp;(3452)&nbsp;60&nbsp;51&nbsp;29</a>
-					<button class="btn small js-modal hide-on-med-and-down" data-modal="">Оставить заявку</button>
+					<button class="btn small btn-modal hide-on-med-and-down" data-modal="order-form">Оставить заявку</button>
 				</div>
 			</div>
 		</div>

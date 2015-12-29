@@ -6,49 +6,49 @@
 	width: 100%;
 	height: 100%;
 	background: #fff;
-	z-index: 9998;
+	z-index: 98;
 	will-change: transform;
 	transform: translateX(-100%) translateZ(0);
 	transition: transform .3s ease;
 	@media #{$medium-and-up}{
 		width: 50%;
-		max-width: 410px;
+		max-width: 380px;
 	}
 	&.open {
 		transform: translateX(0)
 	}
 	.page-aside-inner {
 		height: 100%;
-		padding: 20px 25px 25px;
+		padding: 55/480*100% 70/320*100%;
 		overflow-y: auto;
 		@media #{$medium-and-up}{
-			//padding: $gutter-width*3 20%;
+			padding: 35px 30/380*100%;
 		}
 	}
 	.logo-box {
-		width: 150px;
-		margin: 0 auto 20px;
+		width: 180px;
+		margin: 0 0 45/480*100vh;
+		@media #{$medium-and-up}{
+			margin: 0 0 50px;
+		}
 	}
 	.btn-close-menu,
 	.btn-icon.btn-close-menu {
 		position: absolute;
-		top: 20px;
-		right: 16px;
-		width: 28px;
-		height: 28px;
-		padding: 6px;
-		will-change: transform;
-		transform: rotate(0) translateZ(0);
-		transition: transform .3s ease;
-		z-index: 9999;
+		top: 10px;
+		right: 10px;
+		width: 35px;
+		height: 35px;
+		padding: 10px;
+		z-index: 99;
 		@media #{$medium-and-up}{
-			top: 30px;
-			right: 26px;
+			top: 40px;
+			right: 20px;
 		}
 		.icon {
 			width: 100%;
 			height: 100%;
-			fill: color('red', 'light');
+			fill: color('blue', 'base');
 		}
 		&:hover {
 			transform: rotate(90deg);
@@ -61,14 +61,7 @@
 	height: 100%;
 	top: 0;
 	left: 0;
-	z-index: -1;
 	background: rgba(0,0,0,.6);
-	opacity: 0;
-	will-change: opacity;
-	transform: translateZ(0);
-	transition: opacity .3s ease;
-	&.open {
-		opacity: 1;
-		z-index: 9990;
-	}
+	z-index: 90;
+	display: none;
 }

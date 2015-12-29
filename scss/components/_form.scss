@@ -10,12 +10,14 @@ textarea {
 	display: block;
 	width: 100%;
 	box-sizing: border-box;
-	border: 1px solid color('bluegray', 'medium');
-	padding: 9px 18px;
+	border: 1px solid color('lightgrey', 'dark');
+	padding: 11px 25px 12px;
 	font-family: inherit;
 	font-size: $base-text;
 	line-height: 20px;
 	color: $base-text-color;
+	border-radius: 4px;
+	background: #fff;
 	
 	-webkit-appearance: none;
 	-moz-appearance: none;
@@ -24,10 +26,10 @@ textarea {
 	& + .textfield-placeholder {
 		font-size: $base-text;
 		line-height: 20px;
-		color: color('gray', 'xlight');
+		color: color('grey', 'base');
 		position: absolute;
-		top: 11px;
-		left: 18px;
+		top: 12px;
+		left: 25px;
 		cursor: text;
 		opacity: 1;
 		will-change: opacity, transform;
@@ -39,7 +41,7 @@ textarea {
 	}
 	&[required] + .textfield-placeholder:after {
 		content: '*';
-		color: color('red', 'light');
+		color: color('red', 'base');
 	}
 	
 	&.inputtext-small {
@@ -56,7 +58,7 @@ textarea {
 	}
 	
 	&:focus {
-		border-color: color('bluegray', 'dark');
+		border-color: color('grey', 'base');
 		outline: none;
 	}
 	&.dirty + .textfield-placeholder {
@@ -64,7 +66,8 @@ textarea {
 		transform: translate(50px,0);
 	}
 	&[class*='invalid-']{
-		border-color: color('red', 'light');
+		border-color: color('red', 'base');
+		color: color('red', 'base');
 	}
 	&.invalid-required ~ .error-required,
 	&.invalid-pattern ~ .error-pattern {
@@ -72,27 +75,27 @@ textarea {
 		margin-top: 15px;
 	}
 	&.dirty:not([class*='invalid-']){
-		border-color: color('green', 'light');
+		border-color: color('green', 'base');
 	}
 }
 textarea {
 	max-width: 100%;
-	min-height: 190px;
+	min-height: 130px;
 }
 .error-text {
 	height: 0;
 	overflow: hidden;
 	margin-left: 20px;
 	font-size: $base-text;
-	color: color('red', 'light');
+	color: color('red', 'base');
 	transition: all .3s ease;
 }
 .error-box {
-	border: 1px solid color('red', 'light');
+	border: 1px solid color('red', 'base');
 	padding: 9px 18px;
 	font-size: $base-text;
 	line-height: 20px;
-	color: color('red', 'light');
+	color: color('red', 'base');
 	margin-bottom: 20px;
 }
 
@@ -147,43 +150,8 @@ input[type="radio"] {
 	}
 }
 
-fieldset {
-	position: relative;
-	padding: 0 0 30px;
-	margin-top: 25px;
-	margin-bottom: 25px;
-	border: 0;
-	border-bottom: 1px solid color('bluegray', 'light');
-	&:after {
-		content: '';
-		display: block;
-		width: 0;
-		height: 0;
-		border-top: 10px solid color('bluegray', 'light');
-		border-left: 3px solid #fff;
-		border-right: 3px solid #fff;
-		outline: 3px solid #fff;
-		position: absolute;
-		bottom: -5px;
-		left: 50%;
-		margin-left: -3px;
-	}
-	&:last-of-type {
-		border-bottom: 0;
-		&:after {
-			display: none;
-		}
-	}
-}
-legend {
-	font-size: $xbig-text;
-	margin-bottom: 25px;
-}
 .field {
 	margin-bottom: 20px;
-	&:last-of-type {
-		margin-bottom: 0;
-	}
 }
 .inline-field {
 	vertical-align: baseline;
@@ -294,76 +262,54 @@ legend {
 
 // select
 select {
+	display: block;
+	width: 100%;
 	box-sizing: border-box;
-	//border: 1px solid color('border', 'light');
-	padding: 0 5px;
+	border: 1px solid color('lightgrey', 'dark');
+	padding: 11px 25px 12px;
 	font-family: inherit;
-	line-height: 43px;
-	height: 45px;
-	vertical-align: baseline;
-	cursor: pointer;
-	width: 100%;
-	option {
-		max-width: 100%;
-		//color: color('text', 'base');
+	font-size: $base-text;
+	line-height: 20px;
+	color: $base-text-color;
+	border-radius: 4px;
+	background: #fff;
+	
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	
+	& + .select-placeholder {
+		font-size: $base-text;
+		line-height: 20px;
+		color: color('grey', 'base');
+		position: absolute;
+		top: 12px;
+		left: 25px;
+		cursor: pointer;
+		opacity: 1;
+		will-change: opacity, transform;
+		transform: translate(0,0);
+		transition: transform .1s, opacity .1s;
+		&:focus {
+			outline: none;
+		}
 	}
-}
-.select-box select {
-	width: 100%;
 }
 .triangle {
 	position: absolute;
 	top: 1px;
 	right: 1px;
-	width: 30px;
-	height: 43px;
+	width: 43px;
+	height: 41px;
 	background: #fff;
-	font-size: 15px;
-	&:after {
-		content: '';
-		display: block;
-		position: absolute;
-		top: 18px;
-		right: 7px;
-		width: 0;
-		height: 0;
-		//border-top: 8px solid color('border','darkest');
-		border-left: 8px solid transparent;
-		border-right: 8px solid transparent;
+	padding: 13px;
+	.icon {
+		transform: rotate(90deg);
+		will-change: transform;
+		transition: transform .3s ease;
+		fill: color('grey', 'dark');
 	}
-}
-
-// order-form
-.order-form-box,
-.consult-form-box {
-	margin: $gutter-width*3.5 0 $gutter-width*5;
-	@media #{$large-and-up}{
-		margin-top: $gutter-width*5;
-		.col.l5:nth-child(odd) {
-			padding-right: $gutter-width*1.5;
-		}
-		.col.l5:nth-child(even) {
-			padding-left: $gutter-width*1.5;
-		}
-	}
-	.btn {
-		margin-top: $gutter-width;
-	}
-}
-// price-form
-.price-form-box {
-	padding: $gutter-width*3.5 0 $gutter-width*5;
-	.field {
-		margin-bottom: $gutter-width*3;
-		@media #{$medium-and-up}{
-			margin-bottom: 0;
-			margin-right: 18px;
-		}
-		@media #{$large-and-up}{
-			margin-right: 5px;
-		}
-		input {
-			border-color: color('border', 'base');
-		}
+	.dropdown-box.open & .icon{
+		transform: rotate(-90deg);
 	}
 }
