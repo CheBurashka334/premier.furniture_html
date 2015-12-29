@@ -8,7 +8,6 @@
 	<meta name="keywords" content="" />
 	<!--link rel="shortcut icon" href="favicon.ico" type="image/x-icon"-->
 	<!--link rel="shortcut icon" href="favicon.png" type="image/png"-->
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
 	<script src="js/modernizr-custom.min.js"></script>
 	<script src="js/jquery-1.11.3.min.js"></script>
 	<script src="js/materialize.min.js"></script>

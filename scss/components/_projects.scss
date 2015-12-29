@@ -1,5 +1,10 @@
 .project-box {
 	padding-top: 1px;
+	@media #{$large-and-up}{
+		.box-title {
+			margin-bottom: 1em;
+		}
+	}
 }
 .projects-list {
 	margin-top: 20px;

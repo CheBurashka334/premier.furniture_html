@@ -22,6 +22,8 @@
 }
 .company-box-item-icon {
 	margin-bottom: 15px;
+	transition: transform .6s ease-out, opacity 1s ease-out 0.2s;
+	transition-delay: .2s;
 	@media #{$medium-and-up}{
 		margin-bottom: 0;
 		.company-box-item:nth-child(even) & {
@@ -50,18 +52,37 @@
 		fill: color('blue', 'dark');
 	}
 }
-.company-box-item-content .title {
+.company-box-item-title {
 	@extend h2;
 	text-align: center;
 	margin: 0 auto;
+	transition: transform .6s ease-out, opacity 1s ease-out .2s;
 	@media #{$medium-and-up}{
 		text-align: left;
 		margin: 5px 0 20px;
 	}
 }
-.company-box-item .text {
+.company-box-item-text {
 	text-align: center;
+	transition: transform .8s ease-out, opacity 1s ease-out .2s;
 	@media #{$medium-and-up}{
 		text-align: left;
+	}
+}
+// animation
+.company-box-item-icon,
+.company-box-item-title,
+.company-box-item-text {
+	will-change: transform;
+	opacity: 0;
+	.company-box-item:nth-child(even) & {
+		transform: translateX(-960px);
+	}
+	.company-box-item:nth-child(odd) & {
+		transform: translateX(960px);
+	}
+	.company-box-item.scrolled &{
+		opacity: 1;
+		transform: translateX(0);
 	}
 }
