@@ -1,0 +1,105 @@
+// review
+.review-page {
+	padding-top: $gutter-width*3;
+	padding-bottom: $gutter-width*5;
+	.review-logo .img-circle {
+		padding: $gutter-width/2;
+		width: 150px;
+		height: 150px;
+	}
+	.item-title {
+		font-size: 20px;
+		margin-top: $gutter-width*3;
+		margin-bottom: $gutter-width;
+	}
+	.item-info {
+		margin-bottom: $gutter-width;
+	}
+	@media #{$medium-and-up}{
+		padding-top: $gutter-width*5;
+		padding-bottom: $gutter-width*8;
+		.review-header {
+			margin-bottom: $gutter-width*4.5;
+		}
+		.item-title {
+			font-size: 24px;
+		}
+		.review-info {
+			padding-left: $gutter-width*2;
+		}
+		.item-info {
+			margin-bottom: $gutter-width/2;
+		}
+	}
+	@media #{$large-and-up}{
+		padding-top: $gutter-width*6;
+		padding-bottom: $gutter-width*7;
+	}
+}
+
+// reviews-box
+.reviews-box {
+	.review-item {
+		margin-bottom: $gutter-width*3;
+	}
+	.review-logo .img-circle {
+		width: 130px;
+		height: 130px;
+	}
+	.item-title {
+		margin-top: $gutter-width*3;
+		a {
+			color: color('text','base');
+		}
+	}
+	.item-info {
+		margin-bottom: $gutter-width;
+	}
+	@media #{$medium-and-up}{
+		.review-item {
+			margin-bottom: $gutter-width*4;
+			.review-logo {
+				float: left;
+				margin-right: $gutter-width*4;
+			}
+			.review-info,
+			.review-text,
+			.item-info {
+				margin-left: 170px;
+			}
+			.item-title {
+				margin-top: 0;
+				padding-right: 140px;
+				font-size: 24px;
+			}
+			.item-date {
+				position: absolute;
+				top: 0;
+				right: 0;
+			}
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+	@media #{$large-and-up}{
+		.box-title {
+			margin-bottom: $gutter-width*3;
+		}
+		.review-item:nth-child(odd){
+			padding-right: $gutter-width*4;
+		}
+		.review-item:nth-child(even){
+			padding-left: $gutter-width*4;
+		}
+		.review-item .item-title {
+			padding: 0;
+		}
+		.review-item .item-date {
+			position: relative;
+			top: 0;
+			left: 0;
+			margin: $gutter-width 0 $gutter-width*2;
+		}
+	}
+}

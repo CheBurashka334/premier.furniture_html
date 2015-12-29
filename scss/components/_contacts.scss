@@ -1,0 +1,37 @@
+.contacts-box {
+	padding: 35px 0 220px;
+	background: url('images/footer-bg.jpg') center no-repeat;
+	background-size: cover;
+	color: #fff;
+	font-size: $big-text;
+	text-align: center;
+	.box-title, a {
+		color: inherit;
+	}
+	.btn {
+		margin-top: 20px;
+	}
+	p:not(.address){
+		margin: 0;
+	}
+	@media #{$small-only}{
+		.box-title {
+			margin: 0 0 1em;
+		}
+	}
+	@media #{$medium-and-up}{
+		padding: 10px 0 160px;
+		font-size: $xbig-text;
+		.box-title {
+			font-size: 35px;
+			line-height: 40px;
+			margin: 60px 0; 
+		}
+		.btn {
+			margin-top: 40px;
+		}
+	}
+	@media #{$medium-and-up}{
+		padding: 10px 0 140px;
+	}
+}

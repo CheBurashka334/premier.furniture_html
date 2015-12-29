@@ -1,0 +1,55 @@
+// start 
+.start-box {
+	width: 100%;
+	height: 480px;
+	height: 100vh;
+	background: url('images/content/start.jpg') center no-repeat;
+	background-size: cover;
+	color: #fff;
+	&:before {
+		content: '';
+		display: block;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background: linear-gradient(to bottom, rgba(26,40,63,.6) 0%, rgba(26,40,63,0) 100%);
+	}
+	@media #{$medium-and-up}{
+		height: 1024px;
+		height: 100vh;
+	}
+	@media #{$large-and-up}{
+		background-size: cover;
+		height: 768px;
+		height: 100vh;
+	}
+	.icon {
+		fill: #fff;
+	}
+}
+.start-box-content {
+	padding: 150px 20px;
+	@media #{$medium-and-up}{
+		padding-top: 400px;
+	}
+	@media #{$medium-and-up}{
+		padding-top: 400px;
+	}
+	@media #{$large-and-up}{
+		padding-top: 320px;
+	}
+}
+.start-box-title {
+	font-size: $xlarge-text;
+	font-weight: 800;
+	text-align: center;
+	text-transform: uppercase;
+	@media #{$medium-and-up}{
+		font-size: 46px;
+	}
+	@media #{$large-and-up}{
+		font-size: 60px;
+	}
+}

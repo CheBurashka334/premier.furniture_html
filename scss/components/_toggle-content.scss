@@ -1,0 +1,22 @@
+// toggleContent
+.toggle-content-box {
+	position: relative;
+	overflow: hidden;
+	.show-buttons {
+		position: absolute;
+		width: 100%;
+		left: 0;
+		bottom: 0;
+		padding: 0 $gutter-width 1em;
+		background: white;
+	}
+	&.table .show-buttons {
+		padding: 0 0 1em;
+	}
+	&[data-state="less"] .show-less {
+		display: none;
+	}
+	&[data-state="more"] .show-more {
+		display: none;
+	}
+}

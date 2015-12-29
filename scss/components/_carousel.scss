@@ -1,0 +1,82 @@
+// carousel
+.carousel {
+	overflow: hidden;
+	@media #{$medium-and-up}{
+		//height: 560px;
+	}
+	.carousel-inner {
+		width: 99999px;
+		max-width: 99999px;
+		z-index: 2;
+	}
+	.carousel-item {
+		box-sizing: border-box;
+		position: relative;
+		float: left;
+		height: 100%;
+		padding: 0;
+		img {
+			display: block;
+		}
+	}
+	&.fullwidth .carousel-item {
+		width: 100vw;
+	}
+}
+.carousel-controlls {
+	position: absolute;
+	width: 120px;
+	height: 35px;
+	bottom: 15px;
+	left: 50%;
+	margin-left: -60px;
+	z-index: 3;
+	.prev,
+	.next {
+		position: absolute;
+		top: 0;
+		width: 35px;
+		height: 35px;
+		padding: 10px;
+		background: rgba(59,59,59,0.8);
+		border: 0;
+		color: #fff;
+		.icon {
+			fill: #fff;
+		}
+		&:hover .icon {
+			fill: color('primary', 'base');
+		}
+	}
+	.prev {
+		left: 0;
+		transform: rotate(180deg);
+	}
+	.next {
+		right: 0;
+	}
+	.indicator {
+		position: absolute;
+		top: 0;
+		left: 35px;
+		width: 50px;
+		height: 100%;
+		padding: 10px 5px;
+		font-size: $small-text;
+		line-height: 15px;
+		text-align: center;
+		vertical-align: middle;
+		background: rgba(255,255,255,.8);
+		color: $base-text-color;
+	}
+}
+.project-carousel .carousel-controlls {
+	opacity: 0;
+	transform: translateY(150%);
+	will-change: transform;
+	transition: opacity .3s ease, transform .3s ease;
+	.project-item.active & {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}

@@ -1,0 +1,33 @@
+@mixin font_paths($font){
+	src: url('#{$fonts-path}'+$font+'.eot');
+	src: url('#{$fonts-path}'+$font+'.eot#iefix') format("embedded-opentype"),
+		 url('#{$fonts-path}'+$font+'.woff') format("woff"),
+		 url('#{$fonts-path}'+$font+'.ttf') format("truetype"),
+		 url('#{$fonts-path}'+$font+'.otf') format("opentype"),
+		 url('#{$fonts-path}'+$font+'.svg') format("svg");
+}
+
+@font-face {
+	font-family: 'proxima-nova';
+	@include font_paths('proxima-nova_regular');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'proxima-nova';
+	@include font_paths('proxima-nova_semibold');
+	font-weight: 600;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'proxima-nova';
+	@include font_paths('proxima-nova_extrabold');
+	font-weight: 800;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'proxima-nova';
+	@include font_paths('proxima-nova_black');
+	font-weight: 900;
+	font-style: normal;
+}

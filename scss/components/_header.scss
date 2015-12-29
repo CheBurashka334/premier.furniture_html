@@ -1,0 +1,76 @@
+// header
+.header {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	background: #fff;
+	padding: 20px 0;
+	border: 1px solid color('lightgrey', 'base');
+	color: color('blue', 'base-alt');
+	line-height: 20px;
+	vertical-align: middle;
+	transition: background .3s ease;
+	@media #{$medium-and-up}{
+		line-height: 50px;
+	}
+	@media #{$large-and-up}{
+		.container {
+			max-width: 100%;
+		}
+	}
+	@media screen and (min-width: 1500px){
+		.container {
+			max-width: 1500px;
+			.col {
+				max-width: 100%;
+			}
+		}
+	}
+	&.start {
+		background: transparent;
+		border-color: transparent;
+		color: #fff;
+		transition: background .3s ease;
+	}
+}
+.cont-box {
+	text-align: right;
+	a {
+		font-size: $base-text;
+		font-weight: 600;
+		color: inherit;
+		text-decoration: none;
+		@media #{$medium-and-up}{
+			font-size: $big-text;
+		}
+	}
+	@media #{$large-and-up}{
+		.btn {
+			//margin-left: 10%;
+			display: none;
+		}
+	}
+	@media screen and (min-width: 1500px){
+		.btn {
+			margin-left: 10%;
+			display: inline-block;
+		}
+	}
+}
+.logo-box {
+	text-align: center;
+	height: 50px;
+	.logo {
+		width: 180px;
+		height: 100%;
+		fill: color('blue', 'base');
+		.header.start & {
+			fill: #fff;
+		}
+	}
+	@media #{$large-and-up}{
+		text-align: left;
+	}
+}

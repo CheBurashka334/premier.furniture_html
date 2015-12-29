@@ -1,0 +1,174 @@
+// layout
+html, body {
+	height: 100%;
+	background: #fff;
+}
+.layout,
+.page {
+	min-height: 100%;
+}
+.workarea-wrapper {
+	min-height: calc(100vh - 195px);
+	padding: 1px 0;
+	margin-top: -1px;
+	margin-bottom: -1px;
+	@media #{$large-and-up}{
+		min-height: calc(100vh - 202px);
+	}
+}
+
+.page {
+	overflow-x: hidden;
+}
+.page-empty {
+	padding: 20vh 0;
+}
+
+@import "components/page-aside";
+@import 'components/header';
+
+.action-box {
+	padding: 40px 0;
+	background: color('blue', 'dark-alt');
+	color: #fff;
+	@media #{$medium-and-up}{
+		background: -moz-radial-gradient(bottom center, circle cover, #525968, #242c40);
+		background: -webkit-radial-gradient(bottom center, circle cover, #525968, #242c40);
+		background: radial-gradient(bottom center, circle cover, #525968, #242c40);
+		padding: 70px 0;
+	}
+	.box-title, a {
+		color: inherit;
+	}
+	
+	.box-title {
+		margin: 0 0 15px;
+		@media #{$medium-and-up}{
+			font-size: $large-text;
+			line-height: 40px;
+			margin: 0 0 45px;
+		}
+	}
+	.box-text {
+		margin: 15px auto 35px;
+		@media #{$medium-and-up}{
+			margin: 45px 0;
+		}
+	}
+}
+.trends-box {
+	padding: 30px 0 38px;
+	background: url('images/trends-bg.jpg') center repeat-x;
+	background-size: contain;
+	@media #{$medium-and-up}{
+		padding: 45px 0 175px;
+	}
+	@media #{$large-and-up}{
+		padding: 45px 0 180px;
+	}
+	.box-title {
+		margin: 0 0 25px;
+		color: #01174d;
+		// ибо заебали эти одинаковые по-разному синие цвета блять, которых миллион на одной странице и каждый используется только однажды блеать
+		@media #{$medium-and-up}{
+			margin: 45px 0 65px;
+		}
+		@media #{$large-and-up}{
+			margin: 45px 0 50px;
+			font-size: 35px;
+		}
+	}
+}
+.reviews-box {
+	padding: 35px 0 30px;
+	@media #{$medium-and-up}{
+		padding: 45px 0 50px;
+	}
+	.box-title {
+		margin: 0 0 30px;
+		@media #{$medium-and-up}{
+			margin: 1.5em 0 50px;
+		}
+		@media #{$large-and-up}{
+			margin: 15px 0 30px;
+			font-size: 35px;
+		}
+	}
+	.review-item {
+		margin-bottom: 10px;
+		@media #{$medium-and-up}{
+			margin-bottom: 30px;
+		}
+	}
+}
+
+// footer
+.footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	padding: 30px 0;
+	font-size: $small-text;
+	text-align: center;
+	color: #fff;
+	.row {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: flex-start;
+	}
+	@media #{$medium-and-up}{
+		padding: 35px 0;
+		.row {
+			flex-direction: row;
+		}
+	}
+	@media #{$large-and-up}{
+		padding: 25px 0;
+	}
+	a {
+		color: inherit;
+	}
+	.dev-box {
+		margin-top: 10px;
+		order: 3;
+		@media #{$medium-and-up}{
+			text-align: right;
+			//float: right;
+			float: none;
+			margin-top: 0px;
+		}
+	}
+	.copy-box {
+		order: 1;
+		@media #{$medium-and-up}{
+			text-align: left;
+			margin-top: 0px;
+			float: none;
+		}
+	}
+	.soc-box {
+		order: 0;
+		vertical-align: middle;
+		text-align: center;
+		margin-bottom: 35px;
+		@media #{$medium-and-up}{
+			order: 2;
+			margin-bottom: 0;
+		}
+		.soc-link {
+			display: inline-block;
+			width: 42px;
+			height: 42px;
+			margin: 0 5px;
+			vertical-align: middle;
+			.icon {
+				fill: #fff;
+			}
+			&:hover .icon {
+				fill: color('blue', 'dark');
+			}
+		}
+	}
+}
