@@ -50,7 +50,10 @@
 	}
 	.prev {
 		left: 0;
-		transform: rotate(180deg);
+		.icon {
+			transform: rotate(180deg);
+			transform-origin: center;
+		}
 	}
 	.next {
 		right: 0;

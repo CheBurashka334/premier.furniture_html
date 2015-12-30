@@ -71,14 +71,19 @@
 		width: 100%;
 		left: 0;
 		max-width: 940px;
+		margin-top: 10vh;
+		margin-bottom: 10vh;
 		@media #{$large-and-up}{
 			left: 50%;
 			margin-left: -470px;
+			margin-top: 50px;
+			margin-bottom: 50px;
 		}
 		.modal-inner {
 			padding: 40px $gutter-width 35px;
 			@media #{$medium-and-up}{
 				padding: 80px $gutter-width*3;
+		
 			}
 			@media #{$large-and-up}{
 				padding: 80px 80px 180px;
@@ -108,16 +113,7 @@
 			}
 		}
 	}
-	&.fixed-form {
-		position: fixed;
-		overflow-y: auto;
-		left: 0;
-		top: 0;
-	}
-	&.scrollto-form {
-		bottom: 140px;
-		@media #{$large-and-up}{
-			bottom: 50px;
-		}
-	}
+}
+.modal-dark-bg {
+	overflow-y: auto;
 }

@@ -41,7 +41,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="btn-menu-box col s2 m1 hide-on-large-only">
-					<button class="btn-menu btn btn-icon hide-on-large-only"></button>
+					<button class="btn-menu btn btn-icon hide-on-large-only"><svg class="icon"><use xlink:href="#menu"/></svg></button>
 				</div>
 				<div class="logo-box col m4 offset-m3 l3 hide-on-small-only">
 					<a href="index.php"><svg class="logo"><use xlink:href="#logo"/></svg></a>

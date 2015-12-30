@@ -2244,13 +2244,13 @@ html, body {
   background: #fff;
 }
 
-/* line 6, scss/_layout.scss */
+/* line 9, scss/_layout.scss */
 .layout,
 .page {
   min-height: 100%;
 }
 
-/* line 10, scss/_layout.scss */
+/* line 13, scss/_layout.scss */
 .workarea-wrapper {
   min-height: calc(100vh - 195px);
   padding: 1px 0;
@@ -2258,18 +2258,18 @@ html, body {
   margin-bottom: -1px;
 }
 @media only screen and (min-width: 961px) {
-  /* line 10, scss/_layout.scss */
+  /* line 13, scss/_layout.scss */
   .workarea-wrapper {
     min-height: calc(100vh - 202px);
   }
 }
 
-/* line 20, scss/_layout.scss */
+/* line 23, scss/_layout.scss */
 .page {
-  overflow-x: hidden;
+  width: 100%;
 }
 
-/* line 23, scss/_layout.scss */
+/* line 27, scss/_layout.scss */
 .page-empty {
   padding: 20vh 0;
 }
@@ -2402,7 +2402,7 @@ html, body {
 @media screen and (min-width: 1280px) {
   /* line 24, scss/components/_header.scss */
   .header .container {
-    max-width: 100%;
+    max-width: 1480px;
   }
   /* line 26, scss/components/_header.scss */
   .header .container .col {
@@ -2498,123 +2498,128 @@ html, body {
   }
 }
 
-/* line 30, scss/_layout.scss */
+/* line 34, scss/_layout.scss */
 .action-box {
   padding: 40px 0;
   background: #1a283f;
   color: #fff;
 }
 @media only screen and (min-width: 651px) {
-  /* line 30, scss/_layout.scss */
+  /* line 34, scss/_layout.scss */
   .action-box {
     background: -webkit-radial-gradient(bottom center, circle cover, #525968, #242c40);
+    background: -webkit-radial-gradient(circle cover at bottom center, #525968, #242c40);
     background: radial-gradient(circle cover at bottom center, #525968, #242c40);
     padding: 70px 0;
   }
 }
-/* line 40, scss/_layout.scss */
+/* line 44, scss/_layout.scss */
 .action-box .box-title, .action-box a, .action-box .btn-link {
   color: inherit;
 }
-/* line 44, scss/_layout.scss */
+/* line 48, scss/_layout.scss */
 .action-box .box-title {
   margin: 0 0 15px;
 }
 @media only screen and (min-width: 651px) {
-  /* line 44, scss/_layout.scss */
+  /* line 48, scss/_layout.scss */
   .action-box .box-title {
     font-size: 28px;
     line-height: 40px;
     margin: 0 0 45px;
   }
 }
-/* line 52, scss/_layout.scss */
+/* line 56, scss/_layout.scss */
 .action-box .box-text {
   margin: 15px auto 35px;
 }
 @media only screen and (min-width: 651px) {
-  /* line 52, scss/_layout.scss */
+  /* line 56, scss/_layout.scss */
   .action-box .box-text {
     margin: 45px 0;
   }
 }
 
-/* line 59, scss/_layout.scss */
+/* line 63, scss/_layout.scss */
 .trends-box {
   padding: 30px 0 38px;
   background: url("images/trends-bg.jpg") center repeat-x;
   background-size: contain;
 }
 @media only screen and (min-width: 651px) {
-  /* line 59, scss/_layout.scss */
+  /* line 63, scss/_layout.scss */
   .trends-box {
     padding: 45px 0 175px;
   }
 }
 @media only screen and (min-width: 961px) {
-  /* line 59, scss/_layout.scss */
+  /* line 63, scss/_layout.scss */
   .trends-box {
     padding: 45px 0 180px;
   }
 }
-/* line 69, scss/_layout.scss */
+/* line 73, scss/_layout.scss */
 .trends-box .box-title {
   margin: 0 0 25px;
   color: #01174d;
 }
 @media only screen and (min-width: 651px) {
-  /* line 69, scss/_layout.scss */
+  /* line 73, scss/_layout.scss */
   .trends-box .box-title {
     margin: 45px 0 65px;
   }
 }
 @media only screen and (min-width: 961px) {
-  /* line 69, scss/_layout.scss */
+  /* line 73, scss/_layout.scss */
   .trends-box .box-title {
     margin: 45px 0 50px;
     font-size: 35px;
   }
 }
 
-/* line 82, scss/_layout.scss */
+/* line 86, scss/_layout.scss */
 .reviews-box {
   padding: 35px 0 30px;
 }
 @media only screen and (min-width: 651px) {
-  /* line 82, scss/_layout.scss */
+  /* line 86, scss/_layout.scss */
   .reviews-box {
     padding: 45px 0 50px;
   }
 }
-/* line 87, scss/_layout.scss */
+/* line 91, scss/_layout.scss */
 .reviews-box .box-title {
   margin: 0 0 30px;
 }
 @media only screen and (min-width: 651px) {
-  /* line 87, scss/_layout.scss */
+  /* line 91, scss/_layout.scss */
   .reviews-box .box-title {
     margin: 1.5em 0 50px;
   }
 }
 @media only screen and (min-width: 961px) {
-  /* line 87, scss/_layout.scss */
+  /* line 91, scss/_layout.scss */
   .reviews-box .box-title {
     margin: 15px 0 30px;
     font-size: 35px;
   }
 }
-/* line 97, scss/_layout.scss */
+/* line 101, scss/_layout.scss */
 .reviews-box .review-item {
   margin-bottom: 10px;
 }
 @media only screen and (min-width: 651px) {
-  /* line 97, scss/_layout.scss */
+  /* line 101, scss/_layout.scss */
   .reviews-box .review-item {
     margin-bottom: 30px;
   }
 }
+/* line 107, scss/_layout.scss */
+.reviews-box .col.no-padding {
+  max-width: 100%;
+}
 
-/* line 106, scss/_layout.scss */
+/* line 113, scss/_layout.scss */
 .footer {
   position: absolute;
   bottom: 0;
@@ -2625,7 +2630,7 @@ html, body {
   text-align: center;
   color: #fff;
 }
-/* line 115, scss/_layout.scss */
+/* line 122, scss/_layout.scss */
 .footer .row {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2646,11 +2651,11 @@ html, body {
           justify-content: flex-start;
 }
 @media only screen and (min-width: 651px) {
-  /* line 106, scss/_layout.scss */
+  /* line 113, scss/_layout.scss */
   .footer {
     padding: 35px 0;
   }
-  /* line 123, scss/_layout.scss */
+  /* line 130, scss/_layout.scss */
   .footer .row {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -2660,16 +2665,21 @@ html, body {
   }
 }
 @media only screen and (min-width: 961px) {
-  /* line 106, scss/_layout.scss */
+  /* line 113, scss/_layout.scss */
   .footer {
     padding: 25px 0;
   }
+  /* line 136, scss/_layout.scss */
+  .footer .container {
+    max-width: 1480px;
+  }
 }
-/* line 130, scss/_layout.scss */
+/* line 140, scss/_layout.scss */
 .footer a, .footer .btn-link {
   color: inherit;
+  text-decoration: none;
 }
-/* line 133, scss/_layout.scss */
+/* line 144, scss/_layout.scss */
 .footer .dev-box {
   margin-top: 10px;
   -webkit-box-ordinal-group: 4;
@@ -2678,14 +2688,14 @@ html, body {
           order: 3;
 }
 @media only screen and (min-width: 651px) {
-  /* line 133, scss/_layout.scss */
+  /* line 144, scss/_layout.scss */
   .footer .dev-box {
     text-align: right;
     float: none;
     margin-top: 0px;
   }
 }
-/* line 143, scss/_layout.scss */
+/* line 153, scss/_layout.scss */
 .footer .copy-box {
   -webkit-box-ordinal-group: 2;
   -webkit-order: 1;
@@ -2693,14 +2703,14 @@ html, body {
           order: 1;
 }
 @media only screen and (min-width: 651px) {
-  /* line 143, scss/_layout.scss */
+  /* line 153, scss/_layout.scss */
   .footer .copy-box {
     text-align: left;
     margin-top: 0px;
     float: none;
   }
 }
-/* line 151, scss/_layout.scss */
+/* line 161, scss/_layout.scss */
 .footer .soc-box {
   -webkit-box-ordinal-group: 1;
   -webkit-order: 0;
@@ -2711,7 +2721,7 @@ html, body {
   margin-bottom: 35px;
 }
 @media only screen and (min-width: 651px) {
-  /* line 151, scss/_layout.scss */
+  /* line 161, scss/_layout.scss */
   .footer .soc-box {
     -webkit-box-ordinal-group: 3;
     -webkit-order: 2;
@@ -3110,48 +3120,30 @@ img.inline-img:first-of-type {
 .btn-menu,
 .btn-menu.btn-icon {
   position: relative;
-  width: 25px;
-  height: 2px;
-  padding: 0;
-  margin: 9px 0;
-  background: #3b3b3b;
+  width: 40px;
+  height: 40px;
+  padding: 12px 15px 12px 0;
+  margin: -12px 0;
+}
+/* line 90, scss/components/_buttons.scss */
+.btn-menu .icon,
+.btn-menu.btn-icon .icon {
+  fill: #3b3b3b;
 }
 @media only screen and (min-width: 651px) {
   /* line 83, scss/components/_buttons.scss */
   .btn-menu,
   .btn-menu.btn-icon {
-    margin: 24px 0;
+    margin: 0;
   }
 }
-/* line 94, scss/components/_buttons.scss */
-.btn-menu:before, .btn-menu:after,
-.btn-menu.btn-icon:before,
-.btn-menu.btn-icon:after {
-  content: '';
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  background: inherit;
-}
-/* line 104, scss/components/_buttons.scss */
-.btn-menu:before,
-.btn-menu.btn-icon:before {
-  top: -7px;
-}
-/* line 107, scss/components/_buttons.scss */
-.btn-menu:after,
-.btn-menu.btn-icon:after {
-  bottom: -7px;
-}
-/* line 110, scss/components/_buttons.scss */
-.header.start .btn-menu, .header.start
-.btn-menu.btn-icon {
-  background: #fff;
+/* line 96, scss/components/_buttons.scss */
+.header.start .btn-menu .icon, .header.start
+.btn-menu.btn-icon .icon {
+  fill: #fff;
 }
 
-/* line 117, scss/components/_buttons.scss */
+/* line 100, scss/components/_buttons.scss */
 .btn-close {
   width: 17px;
   height: 17px;
@@ -3162,20 +3154,20 @@ img.inline-img:first-of-type {
   -webkit-transition: -webkit-transform .3s ease;
           transition: transform .3s ease;
 }
-/* line 126, scss/components/_buttons.scss */
+/* line 109, scss/components/_buttons.scss */
 .btn-close:hover {
   -webkit-transform: rotate(90deg);
       -ms-transform: rotate(90deg);
           transform: rotate(90deg);
 }
 
-/* line 130, scss/components/_buttons.scss */
+/* line 113, scss/components/_buttons.scss */
 .btn-delete-from-card {
   width: 17px;
   height: 17px;
 }
 
-/* line 140, scss/components/_buttons.scss */
+/* line 123, scss/components/_buttons.scss */
 .btn-link {
   background: none;
   border: 0;
@@ -4503,15 +4495,21 @@ select + .select-placeholder:focus {
 /* line 51, scss/components/_carousel.scss */
 .carousel-controlls .prev {
   left: 0;
+}
+/* line 53, scss/components/_carousel.scss */
+.carousel-controlls .prev .icon {
   -webkit-transform: rotate(180deg);
       -ms-transform: rotate(180deg);
           transform: rotate(180deg);
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
 }
-/* line 55, scss/components/_carousel.scss */
+/* line 58, scss/components/_carousel.scss */
 .carousel-controlls .next {
   right: 0;
 }
-/* line 58, scss/components/_carousel.scss */
+/* line 61, scss/components/_carousel.scss */
 .carousel-controlls .indicator {
   position: absolute;
   top: 0;
@@ -4527,7 +4525,7 @@ select + .select-placeholder:focus {
   color: #3b3b3b;
 }
 
-/* line 73, scss/components/_carousel.scss */
+/* line 76, scss/components/_carousel.scss */
 .project-carousel .carousel-controlls {
   opacity: 0;
   -webkit-transform: translateY(150%);
@@ -4537,7 +4535,7 @@ select + .select-placeholder:focus {
   -webkit-transition: opacity .3s ease, -webkit-transform .3s ease;
           transition: opacity .3s ease, transform .3s ease;
 }
-/* line 78, scss/components/_carousel.scss */
+/* line 81, scss/components/_carousel.scss */
 .project-item.active .project-carousel .carousel-controlls {
   opacity: 1;
   -webkit-transform: translateY(0);
@@ -4873,43 +4871,47 @@ select + .select-placeholder:focus {
   width: 100%;
   left: 0;
   max-width: 940px;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
 }
 @media only screen and (min-width: 961px) {
   /* line 70, scss/components/_modal.scss */
   .modal.medium-modal {
     left: 50%;
     margin-left: -470px;
+    margin-top: 50px;
+    margin-bottom: 50px;
   }
 }
-/* line 78, scss/components/_modal.scss */
+/* line 82, scss/components/_modal.scss */
 .modal.medium-modal .modal-inner {
   padding: 40px 10px 35px;
 }
 @media only screen and (min-width: 651px) {
-  /* line 78, scss/components/_modal.scss */
+  /* line 82, scss/components/_modal.scss */
   .modal.medium-modal .modal-inner {
     padding: 80px 30px;
   }
 }
 @media only screen and (min-width: 961px) {
-  /* line 78, scss/components/_modal.scss */
+  /* line 82, scss/components/_modal.scss */
   .modal.medium-modal .modal-inner {
     padding: 80px 80px 180px;
   }
 }
-/* line 88, scss/components/_modal.scss */
+/* line 93, scss/components/_modal.scss */
 .modal.big-modal {
   width: 100%;
   height: 100%;
   background: #f5f6f4;
 }
-/* line 92, scss/components/_modal.scss */
+/* line 97, scss/components/_modal.scss */
 .modal.big-modal .btn-close {
   top: 10px;
   right: 20px;
 }
 @media only screen and (min-width: 651px) {
-  /* line 92, scss/components/_modal.scss */
+  /* line 97, scss/components/_modal.scss */
   .modal.big-modal .btn-close {
     padding: 0;
     top: 35px;
@@ -4917,35 +4919,23 @@ select + .select-placeholder:focus {
   }
 }
 @media only screen and (min-width: 961px) {
-  /* line 92, scss/components/_modal.scss */
+  /* line 97, scss/components/_modal.scss */
   .modal.big-modal .btn-close {
     right: 11.5%;
   }
 }
-/* line 104, scss/components/_modal.scss */
+/* line 109, scss/components/_modal.scss */
 .modal.big-modal .modal-inner {
   padding: 30px 0 40px;
 }
 @media only screen and (min-width: 651px) {
-  /* line 104, scss/components/_modal.scss */
+  /* line 109, scss/components/_modal.scss */
   .modal.big-modal .modal-inner {
     padding: 90px 0;
   }
 }
-/* line 111, scss/components/_modal.scss */
-.modal.fixed-form {
-  position: fixed;
-  overflow-y: auto;
-  left: 0;
-  top: 0;
-}
+
 /* line 117, scss/components/_modal.scss */
-.modal.scrollto-form {
-  bottom: 140px;
-}
-@media only screen and (min-width: 961px) {
-  /* line 117, scss/components/_modal.scss */
-  .modal.scrollto-form {
-    bottom: 50px;
-  }
+.modal-dark-bg {
+  overflow-y: auto;
 }

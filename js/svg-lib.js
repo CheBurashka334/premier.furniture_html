@@ -1,4 +1,7 @@
 var svg = 	'<svg>'+
+			'<symbol id="menu" viewbox="0 0 25 16">'+
+			'<rect x="0" y="0" width="25" height="2"/><rect x="0" y="7" width="25" height="2"/><rect x="0" y="14" width="25" height="2"/>'+
+			'</symbol>'+
 			'<symbol id="select-arr" viewbox="0 0 306 306">'+
 			'<polygon points="94.35,0 58.65,35.7 175.95,153 58.65,270.3 94.35,306 247.35,153"/>'+
 			'</symbol>'+

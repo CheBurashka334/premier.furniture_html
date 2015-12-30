@@ -93,7 +93,7 @@
 							<button class="next"><svg class="icon"><use xlink:href="#arrow"/></svg></button>
 						</div>
 					</div>
-					<div class="project-price">Примерная стоимость проекта: 1&nbsp;000&nbsp;000</div>
+					<div class="project-price">Cтоимость проекта: 999&nbsp;999</div>
 					<div class="overlay">
 						<div class="project-info card">
 							<div class="project-info-name">Кухня в скандинавском стиле</div>
@@ -193,7 +193,7 @@
 	<div class="container">
 		<div class="box-title top-animation">Отзывы наших клиентов</div>
 		<div class="row">
-			<div class="col s12 m8 l12 center">
+			<div class="col s12 m8 l12 center no-padding">
 				<div class="review-item col s12 m8 l6">
 					<div class="video-box">
 						<iframe src="https://www.youtube.com/embed/M5S9BxadI4Y" frameborder="0" allowfullscreen></iframe>
