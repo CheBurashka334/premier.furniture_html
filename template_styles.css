@@ -2399,10 +2399,10 @@ html, body {
     max-width: 100%;
   }
 }
-@media screen and (min-width: 1500px) {
+@media screen and (min-width: 1280px) {
   /* line 24, scss/components/_header.scss */
   .header .container {
-    max-width: 1500px;
+    max-width: 100%;
   }
   /* line 26, scss/components/_header.scss */
   .header .container .col {
@@ -2441,31 +2441,58 @@ html, body {
     display: none;
   }
 }
-@media screen and (min-width: 1500px) {
-  /* line 56, scss/components/_header.scss */
+@media screen and (min-width: 1280px) {
+  /* line 38, scss/components/_header.scss */
+  .cont-box {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: row nowrap;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  /* line 60, scss/components/_header.scss */
+  .cont-box .phone-link {
+    -webkit-flex-shrink: 0;
+        -ms-flex-negative: 0;
+            flex-shrink: 0;
+  }
+  /* line 63, scss/components/_header.scss */
   .cont-box .btn {
     margin-left: 10%;
+    -webkit-flex-shrink: 0;
+        -ms-flex-negative: 0;
+            flex-shrink: 0;
     display: inline-block;
   }
 }
 
-/* line 62, scss/components/_header.scss */
+/* line 70, scss/components/_header.scss */
 .logo-box {
   text-align: center;
   height: 50px;
 }
-/* line 65, scss/components/_header.scss */
+/* line 73, scss/components/_header.scss */
 .logo-box .logo {
   width: 180px;
   height: 100%;
   fill: #313c57;
 }
-/* line 69, scss/components/_header.scss */
+/* line 77, scss/components/_header.scss */
 .header.start .logo-box .logo {
   fill: #fff;
 }
 @media only screen and (min-width: 961px) {
-  /* line 62, scss/components/_header.scss */
+  /* line 70, scss/components/_header.scss */
   .logo-box {
     text-align: left;
   }
@@ -2481,7 +2508,6 @@ html, body {
   /* line 30, scss/_layout.scss */
   .action-box {
     background: -webkit-radial-gradient(bottom center, circle cover, #525968, #242c40);
-    background: -webkit-radial-gradient(circle cover at bottom center, #525968, #242c40);
     background: radial-gradient(circle cover at bottom center, #525968, #242c40);
     padding: 70px 0;
   }
